@@ -297,6 +297,7 @@ discovery.relabel "example" {
 prometheus.scrape "example" {
   targets = discovery.relabel.example.output
   forward_to = [prometheus.remote_write.metrics_service.receiver]
+  honor_labels = true
 }
 ```
 
